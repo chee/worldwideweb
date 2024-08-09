@@ -4,7 +4,7 @@
 	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "vite dev --port 2244",
+		"dev": "vite dev --port ${PORT:-2244}",
 		"mk": "vite build",
 		"tmk": "tsc && vite build",
 		"start": "vite preview"

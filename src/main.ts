@@ -1,8 +1,16 @@
 import {register} from "register-service-worker"
-register(`/service-worker.js?${Math.random().toString(36).slice(2)}`)
-
 let [, path] = location.pathname.split("/")
+register("/service-worker.js", {
+	ready() {
+		if (path.length) {
+			location.reload()
+		}
+	},
+	updated() {
+		if (path.length) {
+			location.reload()
+		}
+	},
+})
 
-if (path.length == 0) {
-	import("./ways/editor.ts")
-}
+path.length || import("./ways/editor.ts")
