@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang=en-CA>
+	<meta charset=utf-8>
+	<title>my computer</title>
+	<style>
+		html {
+			background: white;
+			color: black;
+			height: 100%;
+			overscroll-behavior: none;
+
+		}
+		body {
+			display: flex;
+			flex-direction: column;
+			min-height: 100%;
+			margin: 0;
+		}
+		#window {
+			display: flex;
+			flex-direction: column;
+			flex-grow: 1;
+			font-size: 1.2em;
+		}
+		@media (prefers-dark-mode: dark) {
+			body {
+				background: black;
+				color: white;
+			}
+		}
+	</style>
+	<link rel=icon type=image/svg+xml href=/favicon.ico>
+	<meta name=viewport content="width=device-width,initial-scale=1.0">
+	<body>
+		<article id=window></article>
+		<script type=module src=/src/main.ts></script>
+	</body>
+</html>

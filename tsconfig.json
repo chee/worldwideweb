@@ -1,0 +1,25 @@
+{
+	"compilerOptions": {
+		"allowImportingTsExtensions": true,
+		"allowJs": true,
+		"checkJs": true,
+		"isolatedModules": true,
+		"lib": ["ESNext", "DOM", "DOM.Iterable"],
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"noEmit": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"target": "ESNext"
+	},
+	"include": ["src", "global.d.ts", "html/src", "preview/src"],
+	"exclude": ["src/service-worker.ts"],
+	"references": [
+		{"path": "./tsconfig.node.json"},
+		{"path": "./tsconfig.service-worker.json"}
+	]
+}

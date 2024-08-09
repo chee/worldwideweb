@@ -1,0 +1,30 @@
+.cm-activeLine {
+	background: #33ffee01!important;
+}
+
+.cm-editor {
+	  flex: 1;
+}
+
+.cm-friend {
+	background: #33ffee66
+}
+
+.cm-friend-point {
+	width: 2px;
+	height: 1.2em;
+	display: inline-block;
+	position: absolute;
+	margin-bottom: -2px;
+	background: #33ffee99;
+}
+
+[mono] * {
+	font-family: iosevka, monospace !important;
+	font-size: 1em!important;
+}
+
+
+.cm-cursor {
+	border-color: #ff2a50!important;
+}
