@@ -6,6 +6,7 @@ import {
 	highlightActiveLine,
 	highlightSpecialChars,
 	keymap,
+	lineNumbers,
 	type DecorationSet,
 	type ViewUpdate,
 } from "@codemirror/view"
@@ -13,7 +14,7 @@ import {html} from "@codemirror/lang-html"
 import {css} from "@codemirror/lang-css"
 import {javascript} from "@codemirror/lang-javascript"
 import {dracula} from "@uiw/codemirror-theme-dracula"
-import {bracketMatching, indentOnInput} from "@codemirror/language"
+import {bracketMatching, foldGutter, indentOnInput} from "@codemirror/language"
 import {
 	defaultKeymap,
 	history,
@@ -200,6 +201,8 @@ function setupView() {
 			autocompletion(),
 			closeBrackets(),
 			highlightActiveLine(),
+			lineNumbers(),
+			foldGutter(),
 			EditorState.allowMultipleSelections.of(true),
 			keymap.of([
 				...closeBracketsKeymap,
