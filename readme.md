@@ -24,3 +24,9 @@
 # world wide web
 
 ![](.screenshot.png)
+
+the text editors are collaborative, anyone can edit anything they can see
+
++ if they can, you can,
+
+too
