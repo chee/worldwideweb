@@ -10,6 +10,10 @@ import * as esbuild from "esbuild"
 import fs from "node:fs"
 
 export const config: UserConfig = {
+	define: {
+		"import.meta.env.AUTOMERGE_SYNC_SERVER":
+			process.env.AUTOMERGE_SYNC_SERVER || "wss://autosync-rdd6.onrender.com",
+	},
 	plugins: [
 		wasm() as PluginOption,
 		{
