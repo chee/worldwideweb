@@ -29,9 +29,7 @@ export const config: UserConfig = {
 						),
 					},
 					bundle: true,
-					entryPoints: [
-						path.join(process.cwd(), "src", "service-worker.js"),
-					],
+					entryPoints: [path.join(process.cwd(), "src", "service-worker.js")],
 					outfile: path.join(process.cwd(), "output", "service-worker.js"),
 				})
 			},
@@ -60,6 +58,17 @@ export const config: UserConfig = {
 		plugins() {
 			return [wasm()]
 		},
+	},
+	optimizeDeps: {
+		// This is necessary because otherwise `vite dev` includes two separate
+		// versions of the JS wrapper. This causes problems because the JS
+		// wrapper has a module level variable to track JS side heap
+		// allocations, and initializing this twice causes horrible breakage
+		exclude: [
+			"@automerge/automerge-wasm",
+			"@automerge/automerge-wasm/bundler/bindgen_bg.wasm",
+			"@syntect/wasm",
+		],
 	},
 }
 

@@ -32,7 +32,6 @@ import {
 import startAutomerge from "../start.ts"
 import HashFollower, {getHashParts} from "../follow.ts"
 import "./editor.css"
-import featureflags from "../flags.ts"
 
 let place = document.getElementById("window")!
 

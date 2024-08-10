@@ -18,7 +18,9 @@ async function getDocHandleFromHash(
 	let [documentId] = getHashParts()
 	if (!documentId) {
 		documentId = repo.create({text: ""}).documentId
-		location.hash = documentId + ".html"
+		let url = new URL(location + "")
+		url.hash = documentId + ".html"
+		history.replaceState(null, "", url)
 	}
 
 	let docHandle = repo.find<TextDocument>(documentId)
