@@ -23,7 +23,7 @@ interface Window extends ServiceWorkerGlobalScope {}
 self.addEventListener("install", event => {
 	self.skipWaiting()
 	event.waitUntil(
-		caches.open("everything").then(cache => {
+		caches.open("snacks").then(cache => {
 			return cache.addAll(import.meta.env.FILES)
 		})
 	)
@@ -63,4 +63,17 @@ self.addEventListener("fetch", (event: FetchEvent) => {
 			)
 		} catch {}
 	}
+	event.respondWith(
+		caches.open("snacks").then(cache => {
+			return cache.match(event.request).then(cr => {
+				return (
+					cr ||
+					fetch(event.request.url).then(fr => {
+						cache.put(event.request, fr.clone())
+						return fr
+					})
+				)
+			})
+		})
+	)
 })
