@@ -173,14 +173,22 @@ function onschemechange(event: MediaQueryListEvent) {
 }
 darkmatch.addEventListener("change", onschemechange)
 
-let [, ext] = getHashParts() || "html"
-let syntax = {
+let syntaxes = {
 	html: html(),
 	css: css(),
 	js: javascript({typescript: false, jsx: false}),
-}[ext || "html"]
+} as const
+
+function getHashSyntax() {
+	let [, ext] = (getHashParts() || "html") as [unknown, keyof typeof syntaxes]
+	return syntaxes[ext || "html"]
+}
 
 function setupView() {
+	let lang = new Compartment()
+	hash.sub(() => {
+		lang.reconfigure(getHashSyntax())
+	})
 	return new EditorView({
 		doc: hash.docHandle!.docSync()!.text,
 		extensions: [
@@ -211,7 +219,7 @@ function setupView() {
 				...historyKeymap,
 				...completionKeymap,
 			]),
-			syntax,
+			lang.of(getHashSyntax()),
 			dracula,
 			keymap.of([indentWithTab]),
 		],
