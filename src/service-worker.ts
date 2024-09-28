@@ -19,7 +19,7 @@ self.repo = repo
 
 interface Window extends ServiceWorkerGlobalScope {}
 
-const SNACKS = "snacks-v6"
+const SNACKS = "snacks-v7"
 self.addEventListener("install", event => {
 	self.skipWaiting()
 	event.waitUntil(

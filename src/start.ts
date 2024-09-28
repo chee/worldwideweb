@@ -13,6 +13,7 @@ export default async function startAutomerge() {
 		storage,
 		enableRemoteHeadsGossiping: true,
 	})
+	await repo.networkSubsystem.whenReady()
 	window.repo = repo
 	return repo
 }
