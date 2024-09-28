@@ -19,7 +19,7 @@ self.repo = repo
 
 interface Window extends ServiceWorkerGlobalScope {}
 
-const SNACKS = "snacks-v4"
+const SNACKS = "snacks-v5"
 self.addEventListener("install", event => {
 	self.skipWaiting()
 	event.waitUntil(
@@ -54,8 +54,7 @@ self.addEventListener("fetch", (event: FetchEvent) => {
 			event.respondWith(
 				handle.doc().then(async doc => {
 					await repo.networkSubsystem.whenReady()
-					let text = doc?.text
-					return new Response(text, {
+					return new Response(doc?.text, {
 						headers: {
 							"content-type":
 								types.find(([r]) => r.exec(url.pathname))?.[1] ?? "text/plain",
