@@ -6,11 +6,8 @@ import {Repo} from "@automerge/automerge-repo"
 
 export default async function startAutomerge() {
 	let idb = new IndexedDBStorageAdapter("bunkbed")
-	let socky = new BrowserWebSocketClientAdapter(
-		import.meta.env.AUTOMERGE_SYNC_SERVER
-	)
-	let tabby = new BroadcastChannelNetworkAdapter()
-	let network = [socky, tabby]
+	let socky = new BrowserWebSocketClientAdapter("wss://galaxy.observer")
+	let network = [socky]
 	let storage = idb
 	let repo = new Repo({
 		network,
@@ -18,6 +15,6 @@ export default async function startAutomerge() {
 		peerId: (localStorage.getItem("name") as PeerId) ?? undefined,
 	})
 	window.repo = repo
-	// await new Promise<void>(yay => repo.networkSubsystem.once("ready", yay))
+	await repo.networkSubsystem.whenReady()
 	return repo
 }
