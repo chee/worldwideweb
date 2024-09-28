@@ -11,10 +11,9 @@ import {Repo} from "@automerge/automerge-repo/slim"
 Automerge.initializeBase64Wasm(automergeWasmBase64)
 
 let repo = new Repo({
-	network: [
-		new BrowserWebSocketClientAdapter(`wss://galaxy.observer`),
-	],
+	network: [new BrowserWebSocketClientAdapter(`wss://galaxy.observer`)],
 	storage: new IndexedDBStorageAdapter("bunkbed"),
+	enableRemoteHeadsGossiping: true,
 })
 self.repo = repo
 
@@ -51,7 +50,8 @@ self.addEventListener("fetch", (event: FetchEvent) => {
 			event.respondWith(
 				handle.doc().then(async doc => {
 					await repo.networkSubsystem.whenReady()
-					return new Response(doc?.text, {
+					let text = doc?.text
+					return new Response(text, {
 						headers: {
 							"content-type":
 								types.find(([r]) => r.exec(url.pathname))?.[1] ?? "text/plain",

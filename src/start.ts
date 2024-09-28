@@ -1,6 +1,5 @@
 import {type PeerId} from "@automerge/automerge-repo/slim"
 import {BrowserWebSocketClientAdapter} from "@automerge/automerge-repo-network-websocket"
-import {BroadcastChannelNetworkAdapter} from "@automerge/automerge-repo-network-broadcastchannel"
 import {IndexedDBStorageAdapter} from "@automerge/automerge-repo-storage-indexeddb"
 import {Repo} from "@automerge/automerge-repo"
 
@@ -13,6 +12,7 @@ export default async function startAutomerge() {
 		network,
 		storage,
 		peerId: (localStorage.getItem("name") as PeerId) ?? undefined,
+		enableRemoteHeadsGossiping: true,
 	})
 	window.repo = repo
 	await repo.networkSubsystem.whenReady()
