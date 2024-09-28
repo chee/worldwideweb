@@ -19,11 +19,15 @@ self.repo = repo
 
 interface Window extends ServiceWorkerGlobalScope {}
 
+const SNACKS = "snacks-v4"
 self.addEventListener("install", event => {
 	self.skipWaiting()
 	event.waitUntil(
-		caches.open("snacks-v3").then(cache => {
-			return cache.addAll(import.meta.env.FILES)
+		caches.open(SNACKS).then(cache => {
+			try {
+				return cache.addAll(import.meta.env.FILES)
+			} catch {
+			}
 		})
 	)
 })
@@ -64,7 +68,7 @@ self.addEventListener("fetch", (event: FetchEvent) => {
 		} catch {}
 	}
 	event.respondWith(
-		caches.open("snacks-v2").then(cache => {
+		caches.open(SNACKS).then(cache => {
 			return cache.match(event.request).then(cr => {
 				return (
 					cr ||
