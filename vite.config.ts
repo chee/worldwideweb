@@ -12,7 +12,7 @@ import fs from "node:fs"
 export const config: UserConfig = {
 	define: {
 		"import.meta.env.AUTOMERGE_SYNC_SERVER": JSON.stringify(
-			process.env.AUTOMERGE_SYNC_SERVER || "wss://autosync-rdd6.onrender.com"
+			process.env.AUTOMERGE_SYNC_SERVER || "wss://galaxy.observer"
 		),
 	},
 	plugins: [
