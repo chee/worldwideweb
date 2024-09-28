@@ -11,10 +11,8 @@ export default async function startAutomerge() {
 	let repo = new Repo({
 		network,
 		storage,
-		peerId: (localStorage.getItem("name") as PeerId) ?? undefined,
 		enableRemoteHeadsGossiping: true,
 	})
 	window.repo = repo
-	await repo.networkSubsystem.whenReady()
 	return repo
 }
