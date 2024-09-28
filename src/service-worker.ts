@@ -22,7 +22,7 @@ interface Window extends ServiceWorkerGlobalScope {}
 self.addEventListener("install", event => {
 	self.skipWaiting()
 	event.waitUntil(
-		caches.open("snacks-v2").then(cache => {
+		caches.open("snacks-v3").then(cache => {
 			return cache.addAll(import.meta.env.FILES)
 		})
 	)
