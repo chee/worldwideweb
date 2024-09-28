@@ -12,7 +12,7 @@ Automerge.initializeBase64Wasm(automergeWasmBase64)
 
 let repo = new Repo({
 	network: [
-		new BrowserWebSocketClientAdapter(`wss://autosync-rdd6.onrender.com`),
+		new BrowserWebSocketClientAdapter(`wss://galaxy.observer`),
 	],
 	storage: new IndexedDBStorageAdapter("bunkbed"),
 })
