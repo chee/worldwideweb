@@ -9,26 +9,26 @@ importers:
   .:
     dependencies:
       '@automerge/automerge':
-        specifier: ^2.2.7
-        version: 2.2.8
+        specifier: 2.2.9-alpha.2
+        version: 2.2.9-alpha.2
       '@automerge/automerge-codemirror':
         specifier: ^0.0.12
         version: 0.0.12(@lezer/common@1.2.1)
       '@automerge/automerge-repo':
-        specifier: ^1.2.1
-        version: 1.2.1(@types/node@22.1.0)(typescript@5.5.4)
+        specifier: 2.0.0-alpha.11
+        version: 2.0.0-alpha.11(@types/node@22.1.0)(typescript@5.5.4)
       '@automerge/automerge-repo-network-broadcastchannel':
-        specifier: ^1.2.1
-        version: 1.2.1(@types/node@22.1.0)(typescript@5.5.4)
+        specifier: 2.0.0-alpha.11
+        version: 2.0.0-alpha.11(@types/node@22.1.0)(typescript@5.5.4)
       '@automerge/automerge-repo-network-messagechannel':
         specifier: ^1.2.1
         version: 1.2.1(@types/node@22.1.0)(typescript@5.5.4)
       '@automerge/automerge-repo-network-websocket':
-        specifier: ^1.2.1
-        version: 1.2.1(@types/node@22.1.0)(typescript@5.5.4)
+        specifier: 2.0.0-alpha.11
+        version: 2.0.0-alpha.11(@types/node@22.1.0)(typescript@5.5.4)
       '@automerge/automerge-repo-storage-indexeddb':
-        specifier: ^1.2.1
-        version: 1.2.1(@types/node@22.1.0)(typescript@5.5.4)
+        specifier: 2.0.0-alpha.11
+        version: 2.0.0-alpha.11(@types/node@22.1.0)(typescript@5.5.4)
       '@codemirror/autocomplete':
         specifier: ^6.18.0
         version: 6.18.0(@codemirror/language@6.10.2)(@codemirror/state@6.4.1)(@codemirror/view@6.29.1)(@lezer/common@1.2.1)
@@ -196,23 +196,29 @@ packages:
   '@automerge/automerge-codemirror@0.0.12':
     resolution: {integrity: sha512-P57OpYLJsbfzZtW6RA/daQtE/EoDKvH04AuE8/XRoBIYWu14XB8z6Bn0aMF4zfmkVocuXqWFcMvKaTXkv2yMPA==}
 
-  '@automerge/automerge-repo-network-broadcastchannel@1.2.1':
-    resolution: {integrity: sha512-Jm3NiuFe/+3aHpHhRYEYOchkMkavMw7+ysNKqYgC7zyGM8jtBowJhxmD4awvz+I5dWNA64KNJIt4k7h295HPAQ==}
+  '@automerge/automerge-repo-network-broadcastchannel@2.0.0-alpha.11':
+    resolution: {integrity: sha512-5kdvea+mbzogXnv8S5uPh8PZ2zv0YSIAFJa8vIypn0UN6MFtBrmxue7tHQKuwPZIho+fvbLd3TvsgaDOxD7x4A==}
 
   '@automerge/automerge-repo-network-messagechannel@1.2.1':
     resolution: {integrity: sha512-MxWdCZ4EWWyL7V7K6v92XiZL+0qinnxYdGYDyvmSXDVVnkfZ94/J+i0lVt0uKdNs3EGGkKKGs6MIzsyR8llyRA==}
 
-  '@automerge/automerge-repo-network-websocket@1.2.1':
-    resolution: {integrity: sha512-n4sI6l51iBf0edWtX+vhk+sc8wJL72IVZl682SvzRHakA5CzyNZiC8sVzc142zRT3RDN12jCWGpwA2Voq6EXsQ==}
+  '@automerge/automerge-repo-network-websocket@2.0.0-alpha.11':
+    resolution: {integrity: sha512-Gq1JqLWTHS1yZwCYrwYxAAHiAqopcnakePxVX4YwkoXV1fqLKTRV3sC1TDiDApGPWjTwXgwD5b6epTOXdDNiyw==}
 
-  '@automerge/automerge-repo-storage-indexeddb@1.2.1':
-    resolution: {integrity: sha512-u+9eZZJK7DAr541buF4ut1ipkuiKRoaAtoFYo/ilq7zOLO7JX+GQOFx/8eKKRDlGt/AHTcDaFktkcaX0vKahQQ==}
+  '@automerge/automerge-repo-storage-indexeddb@2.0.0-alpha.11':
+    resolution: {integrity: sha512-C9sgVTf4TAhiBovVQyACL9Qzs7Wdi31JcNd4qVupp3CtjLMbIOz0B7kgryGjeSlSffYSTUU8kjHWYV0lAwv18Q==}
 
   '@automerge/automerge-repo@1.2.1':
     resolution: {integrity: sha512-uEBr4bM01aSWkEt2tDKQxfW0Pahz2zbTTn4sRJfeKJlAg2SLr4QepFJ+3Tp4CNEkkU485olfnKYf6gt7uilMZQ==}
 
+  '@automerge/automerge-repo@2.0.0-alpha.11':
+    resolution: {integrity: sha512-M1cE/qi9Hnw/Fr0/KjszKPR5VPmsB2TJcDKIUzDX5Mg9089xRYjNwruo/mjXMCg+0gr1CwRHbqyjIkY1t1L/Lw==}
+
   '@automerge/automerge@2.2.8':
     resolution: {integrity: sha512-kP6Z9lIkNeIGe/jhF8SUQAgUMwVjtXCBL0eZEgQGCoWvPNTPcg8fnQco28XkYBrfkkuqiEUAbdHhJmSp0y79ug==}
+
+  '@automerge/automerge@2.2.9-alpha.2':
+    resolution: {integrity: sha512-058IOtIx7+xAzKr8Kzt4QIj6mYJiAkc+w4plpaJiSHn5qhix+YwVmRa37iGWGBLayfUBHFqKShEqKSytfLRj9w==}
 
   '@babel/code-frame@7.24.7':
     resolution: {integrity: sha512-BcYH1CVJBO9tvyIZ2jVeXgSIMvGZ2FDRvDdOIVQyuklNKSsx+eppDEBq/g47Ayw+RqNFE+URvOShmf+f/qwAlA==}
@@ -4962,9 +4968,9 @@ snapshots:
     transitivePeerDependencies:
       - '@lezer/common'
 
-  '@automerge/automerge-repo-network-broadcastchannel@1.2.1(@types/node@22.1.0)(typescript@5.5.4)':
+  '@automerge/automerge-repo-network-broadcastchannel@2.0.0-alpha.11(@types/node@22.1.0)(typescript@5.5.4)':
     dependencies:
-      '@automerge/automerge-repo': 1.2.1(@types/node@22.1.0)(typescript@5.5.4)
+      '@automerge/automerge-repo': 2.0.0-alpha.11(@types/node@22.1.0)(typescript@5.5.4)
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -4984,9 +4990,9 @@ snapshots:
       - supports-color
       - typescript
 
-  '@automerge/automerge-repo-network-websocket@1.2.1(@types/node@22.1.0)(typescript@5.5.4)':
+  '@automerge/automerge-repo-network-websocket@2.0.0-alpha.11(@types/node@22.1.0)(typescript@5.5.4)':
     dependencies:
-      '@automerge/automerge-repo': 1.2.1(@types/node@22.1.0)(typescript@5.5.4)
+      '@automerge/automerge-repo': 2.0.0-alpha.11(@types/node@22.1.0)(typescript@5.5.4)
       cbor-x: 1.6.0
       debug: 4.3.6
       eventemitter3: 5.0.1
@@ -5001,9 +5007,9 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@automerge/automerge-repo-storage-indexeddb@1.2.1(@types/node@22.1.0)(typescript@5.5.4)':
+  '@automerge/automerge-repo-storage-indexeddb@2.0.0-alpha.11(@types/node@22.1.0)(typescript@5.5.4)':
     dependencies:
-      '@automerge/automerge-repo': 1.2.1(@types/node@22.1.0)(typescript@5.5.4)
+      '@automerge/automerge-repo': 2.0.0-alpha.11(@types/node@22.1.0)(typescript@5.5.4)
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -5030,7 +5036,30 @@ snapshots:
       - supports-color
       - typescript
 
+  '@automerge/automerge-repo@2.0.0-alpha.11(@types/node@22.1.0)(typescript@5.5.4)':
+    dependencies:
+      '@automerge/automerge': 2.2.8
+      bs58check: 3.0.1
+      cbor-x: 1.6.0
+      debug: 4.3.6
+      eventemitter3: 5.0.1
+      fast-sha256: 1.3.0
+      tiny-typed-emitter: 2.1.0
+      ts-node: 10.9.2(@types/node@22.1.0)(typescript@5.5.4)
+      uuid: 9.0.1
+      xstate: 5.17.1
+    transitivePeerDependencies:
+      - '@swc/core'
+      - '@swc/wasm'
+      - '@types/node'
+      - supports-color
+      - typescript
+
   '@automerge/automerge@2.2.8':
+    dependencies:
+      uuid: 9.0.1
+
+  '@automerge/automerge@2.2.9-alpha.2':
     dependencies:
       uuid: 9.0.1
 
