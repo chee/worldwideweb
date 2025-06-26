@@ -28,3 +28,6 @@ public/excalidraw-assets
 
 *.config.*timestamp*js
 public/plugins/*
+
+# Local Netlify folder
+.netlify
